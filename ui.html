@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Labs First — the actual screens</title>
+<style>
+:root{--blue:#2853d2;--ink:#1c1a17;--sub:#6b645c;--line:#e9e2d8;--green:#1e8e5a;--red:#c0392b}
+*{margin:0;box-sizing:border-box}
+body{background:#f1ebe2;font-family:-apple-system,'Segoe UI',Inter,sans-serif;color:var(--ink);padding:48px 20px}
+.wrap{max-width:1080px;margin:0 auto}
+h1{font-size:27px;margin-bottom:6px}
+.lede{color:var(--sub);margin-bottom:40px;max-width:860px;line-height:1.5;font-size:15.5px}
+h2{font-size:21px;margin:52px 0 4px;padding-top:22px;border-top:2px solid var(--line)}
+.lanesub{color:var(--sub);font-size:14.5px;margin-bottom:26px;max-width:860px;line-height:1.5}
+.shot{margin-bottom:38px}
+.cap{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.cap .n{background:var(--ink);color:#fff;font-weight:800;font-size:13px;border-radius:99px;padding:3px 11px;flex:none}
+.cap .n.red{background:var(--red)} .cap .n.blue{background:var(--blue)} .cap .n.green{background:var(--green)}
+.cap b{font-size:16.5px}
+.cap span{color:var(--sub);font-size:14px}
+.shot img{width:100%;border-radius:12px;border:1px solid var(--line);box-shadow:0 8px 26px rgba(28,26,23,.09)}
+.shot.gone img{border:2px dashed var(--red)}
+.shot.lab img{border:2px solid var(--blue)}
+.callout{background:#f3ecdf;border-radius:10px;padding:13px 17px;font-size:14.5px;max-width:900px;line-height:1.5;margin-top:6px}
+footer{color:var(--sub);font-size:13px;margin-top:44px}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:8px;font-size:13.5px;color:var(--sub)}
+.legend i{width:24px;height:14px;border-radius:4px;display:inline-block;vertical-align:-2px;margin-right:6px}
+.legend .a{background:#fff;border:1px solid var(--line)}.legend .b{background:#e8edfb;border:2px solid var(--blue)}.legend .c{background:#fdf0ee;border:2px dashed var(--red)}
+</style></head><body><div class="wrap">
+<h1>Labs First — the actual screens</h1>
+<p class="lede">Every screenshot below is the real product, rendered from the live components in the codebase (Storybook, Finance pack). Blue-bordered screens are the Labs sprint itself, identical in both flows. Red-dashed screens are the doors the proposal deletes.</p>
+<div class="legend"><span><i class="a"></i>Unchanged</span><span><i class="b"></i>The Labs sprint, same in both flows</span><span><i class="c"></i>Deleted in the proposal</span></div>
+
+<h2>Today — two doors, then the sprint for the 26% who say yes</h2>
+<p class="lanesub">Registration and checkout are unchanged surfaces (not shown). These are the screens in between.</p>
+
+<div class="shot gone"><div class="cap"><span class="n red">1</span><b>The pre-paywall door, on /payment</b><span>interrupts the money page · 15% enter, 4% finish · trial starts read -0.8pt · deleted in the proposal</span></div>
+<img src="ui-door-prepaywall.png" alt="Pre-paywall Labs door on the payment page"></div>
+
+<div class="shot gone"><div class="cap"><span class="n red">2</span><b>The checkout-success door, 8 seconds after paying</b><span>the second ask in a minute · 22% enter · deleted in the proposal</span></div>
+<img src="ui-door-checkout.png" alt="Checkout-success Labs door"></div>
+
+<div class="shot lab"><div class="cap"><span class="n blue">3</span><b>The sprint's front door</b><span>only the 26% who clicked a door ever see this screen</span></div>
+<img src="ui-lab-welcome.png" alt="Labs sprint welcome screen"></div>
+
+<div class="shot lab"><div class="cap"><span class="n blue">4</span><b>Module 1 begins</b></div>
+<img src="ui-lab-m1-intro.png" alt="Module 1 intro"></div>
+
+<div class="shot lab"><div class="cap"><span class="n blue">5</span><b>The real work</b><span>hands-on activity, first artifact of the sprint</span></div>
+<img src="ui-lab-m1-activity.png" alt="Module 1 activity"></div>
+
+<div class="shot lab"><div class="cap"><span class="n blue">6</span><b>The win</b><span>all modules completed, ~15-30 minutes in</span></div>
+<img src="ui-lab-complete.png" alt="Sprint complete"></div>
+
+<div class="shot lab"><div class="cap"><span class="n blue">7</span><b>The handoff</b><span>externship recommendations, matched by the sprint</span></div>
+<img src="ui-lab-recs.png" alt="Recommendations handoff"></div>
+
+<div class="callout"><b>What the data says about this flow:</b> the 26% who reach screens 3-7 run 67% week-1 submission and 11.4% P1. The 74% who decline at screens 1-2 run below control. The blend is flat.</div>
+
+<h2>Proposed — the identical sprint becomes the trial's first step</h2>
+<p class="lanesub">Screens 1 and 2 are deleted. Screens 3-7 are untouched, byte-identical, and move to the front of the trial: after checkout, every trialer lands on screen 3 (with a visible "Skip to my externship"), matched to the vertical they picked at registration. The whole build is the routing between checkout and screen 3, plus instrumentation. That is why it is 2-3 tickets and reversible by flag.</p>
+<div class="callout"><b>Read the same screens above as the proposed flow:</b> checkout → screen 3 (100% of trialers, skip visible) → 4 → 5 → 6 → 7 → externship home with one win on the board → Project 1 as the second ask.</div>
+
+<footer>Screens rendered Aug 19 from the live components (Storybook, Finance pack) · doors shown in their real page context · no student data</footer>
+</div></body></html>
