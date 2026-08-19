@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Extern Labs — Progress + the Next Play</title>
+<style>
+:root{--blue:#2853d2;--ink:#1c1a17;--sub:#6b645c;--warm:#faf6f0;--line:#e9e2d8;--green:#1e8e5a;--red:#c0392b}
+*{margin:0;box-sizing:border-box}
+html,body{height:100%}
+body{background:#14120f;font-family:-apple-system,'Segoe UI',Inter,sans-serif;color:var(--ink)}
+.slide{display:none;width:100vw;height:100vh;background:var(--warm);padding:6vh 7vw;flex-direction:column}
+.slide.active{display:flex}
+.kicker{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+h1{font-size:52px;letter-spacing:-.02em;line-height:1.1}
+h2{font-size:38px;letter-spacing:-.015em;margin-bottom:10px;line-height:1.15}
+.sub{font-size:20px;color:var(--sub);line-height:1.5;max-width:900px}
+.grid{display:flex;gap:22px;margin-top:34px;flex:1;align-items:stretch}
+.card{flex:1;background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 26px 22px;display:flex;flex-direction:column}
+.card .k{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin-bottom:10px}
+.card .big{font-size:44px;font-weight:800;letter-spacing:-.02em}
+.card .big.good{color:var(--green)} .card .big.bad{color:var(--red)} .card .big.blue{color:var(--blue)}
+.card p{font-size:16.5px;color:var(--sub);line-height:1.5;margin-top:10px}
+.card p b{color:var(--ink)}
+ul.pts{margin-top:26px;list-style:none;display:flex;flex-direction:column;gap:16px}
+ul.pts li{font-size:21px;line-height:1.45;padding-left:30px;position:relative;max-width:1000px}
+ul.pts li:before{content:"";position:absolute;left:0;top:11px;width:12px;height:12px;border-radius:50%;background:var(--blue)}
+ul.pts li b{font-weight:800}
+.foot{margin-top:auto;padding-top:18px;font-size:14px;color:var(--sub);display:flex;justify-content:space-between}
+.imgwrap{flex:1;display:flex;align-items:center;justify-content:center;margin-top:18px;min-height:0}
+.imgwrap img{max-width:100%;max-height:100%;border-radius:12px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(28,26,23,.1)}
+.pillrow{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.pill{background:#e8edfb;color:var(--blue);font-weight:700;border-radius:99px;padding:9px 18px;font-size:16px}
+.pill.warn{background:#fdf0ee;color:var(--red)}
+.pill.ok{background:#e6f4ec;color:var(--green)}
+.nav{position:fixed;bottom:18px;right:24px;font-size:13px;color:#9a9184;z-index:9}
+.titleslide{justify-content:center}
+.titleslide .sub{margin-top:18px;font-size:24px}
+table.tb{margin-top:28px;border-collapse:collapse;font-size:19px;width:100%;max-width:980px}
+table.tb th{text-align:left;font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--sub);padding:10px 18px;border-bottom:2px solid var(--line)}
+table.tb td{padding:13px 18px;border-bottom:1px solid var(--line)}
+table.tb td.n{font-weight:800;font-variant-numeric:tabular-nums}
+.good{color:var(--green)}.bad{color:var(--red)}.blue{color:var(--blue)}
+.note{margin-top:auto;font-size:14.5px;color:var(--sub);background:#f3ecdf;border-radius:10px;padding:10px 16px;max-width:980px}
+</style></head><body>
+
+<section class="slide titleslide active">
+<div class="kicker">Extern Labs · team review · Aug 19</div>
+<h1>Labs: what two experiments taught us,<br>and the next play</h1>
+<p class="sub">July proved who Labs works for. August proved how not to deliver it. The next play combines both.</p>
+<div class="foot"><span></span><span>1 / 7</span></div>
+</section>
+
+<section class="slide">
+<div class="kicker">1 · The July test</div>
+<h2>Labs behind catalog doors: it worked for the people who found it</h2>
+<p class="sub">Jul 17-27 cohort. Labs was reachable only by students who went looking, filtering for Finance or Data in the catalog.</p>
+<div class="grid">
+<div class="card"><div class="k">Week-1 task submission</div><div class="big good">+8 pts</div><p><b>71.2% vs 63.5%</b> control. A consistent direction under every way we cut it, short of statistical proof at this sample.</p></div>
+<div class="card"><div class="k">What we did with it</div><div class="big blue">2nd vertical</div><p>Built and shipped the <b>Data Analytics</b> lab alongside Finance to widen who Labs can match.</p></div>
+<div class="card"><div class="k">The drawback</div><div class="big bad">~23% reach</div><p>Only self-selected seekers ever saw it. <b>Not enough traffic</b> to power a verdict or move a company metric.</p></div>
+</div>
+<div class="foot"><span>High intent works. Volume was the constraint.</span><span>2 / 7</span></div>
+</section>
+
+<section class="slide">
+<div class="kicker">2 · Aug 5 → today</div>
+<h2>We solved traffic with doors at the paywall. Results went flat.</h2>
+<p class="sub">Doors moved to the payment page and checkout, reaching ~96-100% of the arm. Matured cohort Aug 5-16, n≈270 per arm.</p>
+<table class="tb">
+<tr><th>Read</th><th>Labs arm</th><th>Control</th><th>Verdict</th></tr>
+<tr><td>Task 1 submission (2d)</td><td class="n">57.1%</td><td class="n">61.7%</td><td class="bad">flat, not significant</td></tr>
+<tr><td>Project 1 completion (2d)</td><td class="n">9.4%</td><td class="n">8.7%</td><td>noise, still accruing</td></tr>
+<tr><td>Trial starts (guardrail)</td><td class="n">9.2%</td><td class="n">10.0%</td><td class="good">no harm detected</td></tr>
+</table>
+<div class="note">Reach was fully solved: 92-100% of the arm saw an offer within an hour, every day since Aug 5. So the flat result is not a delivery-volume problem.</div>
+<div class="foot"><span>Full traffic, no lift. Something else is going on.</span><span>3 / 7</span></div>
+</section>
+
+<section class="slide">
+<div class="kicker">2 · Why flat</div>
+<h2>High-intent users got washed in with everyone else</h2>
+<div class="grid">
+<div class="card"><div class="k">The 26% who chose to enter</div><div class="big good">67% · 11.4%</div><p>Task 1 and Project 1 rates. <b>Above control on both.</b> These are July's high-intent seekers, still in there.</p></div>
+<div class="card"><div class="k">The 74% who walked past</div><div class="big bad">52.5% · 8.4%</div><p>Below control. An offer they did not ask for, at the worst moment, bought nothing.</p></div>
+<div class="card"><div class="k">The blend the board sees</div><div class="big">flat</div><p>26% above + 74% below <b>averages out to control.</b> The signal is not gone, it is diluted.</p></div>
+</div>
+<div class="note">Honest footnote: the 26/74 split is self-selected, so it describes who uses Labs, not what Labs causes. That is exactly the question the next experiment is designed to answer properly.</div>
+<div class="foot"><span>The product works when chosen. Delivery washed the signal out.</span><span>4 / 7</span></div>
+</section>
+
+<section class="slide">
+<div class="kicker">3 · The next play</div>
+<h2>Labs First: combine both. Intent, at full traffic.</h2>
+<ul class="pts">
+<li><b>Kill the gated doors experiment.</b> Its honest verdict: no detectable effect either way at the achievable sample. The paywall door comes off the payment page entirely.</li>
+<li><b>The trial opens with the lab.</b> Same lab as today, moved to the front: matched to the vertical each student picked at registration, so everyone arrives high-intent by construction. Visible skip.</li>
+<li><b>Traffic becomes a non-issue.</b> 100% of trialers see it instead of 26%. Clean 50/50 test at trial start, kill switch, 2-3 tickets, fully reversible.</li>
+</ul>
+<div class="pillrow"><span class="pill">Same product, new placement</span><span class="pill ok">100% reach</span><span class="pill">Powered task read: late Sept</span><span class="pill">P1 read: mid-Oct</span></div>
+<div class="foot"><span>The big swing: manufacture the first win, then ask for Project 1.</span><span>5 / 7</span></div>
+</section>
+
+<section class="slide">
+<div class="kicker">3 · The flow, before and after</div>
+<h2>Two frames deleted, one frame moved</h2>
+<div class="imgwrap"><img src="laneB.png" alt="Proposed lab-first flow"></div>
+<div class="foot"><span>Full storyboard: jaypwadhwani.github.io/extern-labs-first-mock</span><span>6 / 7</span></div>
+</section>
+
+<section class="slide">
+<div class="kicker">3 · Why this should move P1</div>
+<h2>Completion begets completion</h2>
+<div class="grid">
+<div class="card"><div class="k">The strongest predictor we have</div><div class="big blue">27.7% vs 7.9%</div><p>Project 1 completion for students who have <b>already finished something at Extern</b> vs first-timers. A 3.5x gap. A lab is a 30-minute finishable thing: the trial's first hour creates a completer.</p></div>
+<div class="card"><div class="k">How we will know</div><div class="big">1 date</div><p>Pre-registered floors, one decision date. Task 1 powered <b>late September</b>, P1 <b>mid-October</b>. Kill conditions written down before launch: trial starts drop, or the lab delays week-1 work without raising completion.</p></div>
+</div>
+<div class="foot"><span>Ship target: week of Aug 25 · reversible by flag</span><span>7 / 7</span></div>
+</section>
+
+<div class="nav">← → to navigate</div>
+<script>
+let i=0;const s=document.querySelectorAll('.slide');
+function go(n){i=Math.max(0,Math.min(s.length-1,n));s.forEach((x,j)=>x.classList.toggle('active',j===i))}
+addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')go(i+1);if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1)});
+addEventListener('click',e=>{if(e.clientX>innerWidth/2)go(i+1);else go(i-1)});
+</script>
+</body></html>
